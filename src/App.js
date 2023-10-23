@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import Nav from './components/Navbar';
+import { Route,Routes } from 'react-router-dom';
+import Home from './Pages/Home';
+import Notification from './components/cart_notification.jsx';
+import MenuPage from './Pages/MenuPage';
+import Footer from './components/footer';
+import Cart from './Pages/CartPage';
+import Protect from './components/Protect';
+import Account from './Pages/Login';
+import ProductPage from './Pages/ProductPage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App(){
+    
+    
+    return(
+        <>
+                
+                
+                <Notification />
+                <Nav />
+
+                <Routes>
+                    <Route  path='/' exact Component={Home}/>
+                    <Route  path='/menu'  Component={MenuPage}/>
+                    <Route  path='/login'  Component={Account}/>
+                    <Route  path='/productpage/:id'  Component={ProductPage}/>
+
+                    <Route  path='/cart'  element={ <Protect>
+                            <Cart/>
+                        </Protect>
+
+                     }/>
+                </Routes>
+
+                <Footer />
+            
+        </>
+    )
+   
 }
-
-export default App;

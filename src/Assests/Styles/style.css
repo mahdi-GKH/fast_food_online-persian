@@ -1,0 +1,58 @@
+:root{
+    --bg-dark:#2D343C
+}
+
+body{
+    overflow-x: none;
+}
+
+body,.Nav{
+    background-color: var(--bg-dark) !important;    
+    
+}
+
+.bg-blur{
+    background-color: rgba(0, 0, 0, 0.451);
+    backdrop-filter: blur(5px);
+    z-index: 99;
+}
+
+#offcanvas{
+    background-color: rgba(0, 0, 0, 0.489);
+    backdrop-filter: blur(5px);
+}
+
+
+
+#about figcaption{
+    background-image: linear-gradient(transparent,black);
+}
+
+#menu{
+    background-color: #38404a;
+}
+#delivery{
+    background-image: url('../Images/bg-delivery.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #AE92FF;
+    
+}
+#delivery-text{
+    background-color: rgba(0, 0, 0, 0.429);   
+    backdrop-filter: blur(5px);
+}
+footer{
+    background-color: #24201F;
+}
+#Notification_text{
+    right: -300% ;
+    transition: .5s;
+}
+#Notification_text:hover{
+    right: 0 !important;
+}
+#MenuSection{
+    background-color: #38404a;
+}
